@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+	<meta charset="utf-8">
+	<title>MadLibs</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1>Mad Libs</h1>
+		<div id="options">
+			<form>
+				<div class="form-group">
+					<span class="form-group-addon">Nouns</span>
+					<input id='nouns' type="text" class="form-control" placeholder="noun,noun,noun,noun">
+				</div>
+				<div class="form-group">
+					<span class="form-group-addon">Verbs</span>
+					<input id="verbs" type="text" class="form-control" placeholder="verb,verb,verb,verb">
+				</div>
+				<div class="form-group">
+					<span class="form-group-addon">Adjectives</span>
+					<input id="adjectives" type="text" class="form-control"
+						placeholder="adjective,adjective,adjective,adjective">
+				</div>
+				<div class="form-group">
+					<span class="form-group-addon">Adverbs</span>
+					<input id="adverbs" type="text" class="form-control" placeholder="adverb,adverb,adverb,adverb">
+				</div>
+				<div id="storyTypes">
+
+				</div>
+				<h4 id="storyName">Choose a Story</h4>
+				<div id="buttons">
+					<button onclick="generateStory()" class="btn btn-primary" type='button' id="generate">Generate</button>
+					<button onclick="getStoriesFromDB()" class="btn btn-primary" type='button' id="getStory">Get Created Stories</button>
+				</div>
+			</form>
+		</div>
+		<div id="story">			
+			<p id="storyText"></p>
+		</div>
+
+		<div id="dvStoryTable">
+			
+		</div>
+
+	</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyDf2ElEQxVzRSJaHmjPa5ALC85JPUva2gs",
+			authDomain: "madlibs-85bba.firebaseapp.com",
+			databaseURL: "https://madlibs-85bba.firebaseio.com",
+			storageBucket: "",
+			messagingSenderId: "98330842356"
+		};
+		firebase.initializeApp(config);
+	</script>
+	<script src="script.js"></script>
+</body>
+
+</html>
